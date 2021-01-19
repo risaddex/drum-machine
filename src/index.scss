@@ -1,0 +1,75 @@
+/* VARIABLES
+---------------------------------------------------------*/
+$mainColor: #6C757D;
+$gunMetal: #343A40;
+$padHeight: 120px;
+$padWidth: 140px;
+
+/* GLOBALS
+---------------------------------------------------------*/
+#drum-machine {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html, body{
+  padding: 0px;
+  margin: 0px;
+}
+/* MIXINS
+---------------------------------------------------------*/
+@mixin centralized {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border {
+  border: 1px solid red;
+}
+
+/* CLASSES
+---------------------------------------------------------*/
+.pad-container {
+  margin: 0;
+  padding: 0px;
+  min-width: $padWidth;
+  min-height: $padHeight;
+  // @include centralized();
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.drum-pad {
+  @include centralized();
+  height: $padHeight;
+  width: $padWidth;
+  background-color: $mainColor;
+  margin-left: 5px;
+  margin-right  : 5px;
+}
+
+.screen {
+  display: flex;
+  background-color: rgb(143, 143, 161);
+  height: $padHeight * 2 + 30px;
+  width: $padWidth + 30px;
+  @include centralized();
+}
+
+
+/* IDs
+---------------------------------------------------------*/
+#drum-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#display {
+  background-color: rgb(38, 104, 161);
+  width: 100%;
+  @include centralized();
+}

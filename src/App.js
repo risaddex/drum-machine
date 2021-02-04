@@ -150,21 +150,25 @@ class DrumPad extends React.Component {
     try {
       sound.play();
     } catch {
-      alert("failed to connect server");
+      console.log("failed to connect server");
     }
     this.props.display(this.props.text);
   }
   render() {
     return (
       <div className="col-md-4 pad-container">
-        <div className="drum-pad" onClick={this.playSound}>
+        <div
+          className="drum-pad"
+          onClick={this.playSound}
+          id={this.props.text}
+          >
+            {this.props.keyTrigger}
           <audio
             className="clip"
             style={{ display: "none" }}
             id={this.props.keyTrigger}
             src={this.props.src}
           ></audio>
-          {this.props.keyTrigger}
         </div>
       </div>
     );
